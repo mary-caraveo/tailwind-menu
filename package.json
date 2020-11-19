@@ -1,0 +1,17 @@
+{
+  "name": "Platzifood",
+  "version": "1.0.0",
+  "description": "![overview](./assets/Platzi-layout.PNG)",
+  "main": "index.js",
+  "scripts": {
+    "build": "postcss css/tailwind.css -o public/css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "postcss-cli": "^8.2.0",
+    "tailwindcss": "^1.9.6"
+  }
+}
