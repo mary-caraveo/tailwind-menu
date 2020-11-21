@@ -656,8 +656,6 @@ video {
   --bg-opacity: 1;
   background-color: #a0aec0;
   background-color: rgba(160, 174, 192, var(--bg-opacity));
-  margin-left: auto;
-  margin-right: auto;
   display: block;
 }
 
@@ -669,6 +667,11 @@ video {
   --text-opacity: 1;
   color: #fff;
   color: rgba(255, 255, 255, var(--text-opacity));
+}
+
+.btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .space-y-0 > :not(template) ~ :not(template) {
