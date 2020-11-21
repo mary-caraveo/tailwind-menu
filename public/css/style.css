@@ -21906,6 +21906,30 @@ video {
           animation: bounce 1s infinite;
 }
 
+h1 {
+  font-size: 1.875rem;
+  --text-opacity: 1;
+  color: #2f855a;
+  color: rgba(47, 133, 90, var(--text-opacity));
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.5rem;
+  --text-opacity: 1;
+  color: #68d391;
+  color: rgba(104, 211, 145, var(--text-opacity));
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
+  --text-opacity: 1;
+  color: #b7791f;
+  color: rgba(183, 121, 31, var(--text-opacity));
+  font-weight: 600;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
