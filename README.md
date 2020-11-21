@@ -14,7 +14,11 @@
 
 * npm install autoprefixer@'9.8.6'
 
-* npx tailwindcss init tailwind.config.full.js --full
+* npx tailwindcss init tailwind.config.full.js --full 
+
+* npm i -D @fullhuman/postcss-purgecss
+
+* npm install cssnano --save-dev
 
 <h2>Directivas de Tailwind</h1>
 Directiva es una instrucción que utiliza tailwind para insertar código en el archivo final de css que genera.
