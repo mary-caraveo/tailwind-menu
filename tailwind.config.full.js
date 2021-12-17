@@ -1,7 +1,7 @@
 module.exports = {
   future: {
   },
-  content: [],
+  purge: [],
   target: 'relaxed',
   prefix: '',
   important: false,
