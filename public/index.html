@@ -1,276 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
     <title>Healthy Food</title>
-</head>
+  </head>
 
-<body>
-    <nav x-data=" {open: false} " class=" fixed z-10 w-full bg-secondary text-gray-100">
-        <div class="px-2 bg-secondary text-white flex justify-between items-center">
-            <div ><p class="text-3xl text-yellow-500 font-extrabold">Healthy Food</p></div>
+  <body>
+    <nav x-data="{open: false}" class="fixed z-10 w-full bg-secondary text-gray-100">
+      <div class="px-2 bg-secondary text-white flex justify-between items-center">
+        <div>
+          <p class="text-3xl text-yellow-500 font-extrabold">Healthy Food</p>
+        </div>
+        <div class="text-4xl cursor-pointer hover:scale-110" @click="open = true">&equiv;</div>
+      </div>
 
-            <div class="text-4xl cursor-pointer" @click="open = true" >&equiv;</div>
+      <div x-show="open" @click.away="open = false">
+        <div class="my-1 mx-2">
+          <input class="form-control" type="search" placeholder="Búsqueda" />
         </div>
 
-        <div x-show="open" @click.away="open = false">
+        <div class="py-1 mx-2 md:flex justify-around">
+          <div class="flex pb-2">
+            Precio:
+            <div class="ml-2">$</div>
+            <div class="ml-2 text-primary">$$</div>
+            <div class="ml-2">$$$</div>
+            <div class="ml-2">$$$$</div>
+          </div>
 
-            <div class="my-1 mx-2">
-                <input class="form-control" type="search" placeholder="Búsqueda">
-            </div>
-            <div class="py-1 mx-2 md:flex justify-around">
-                <div class="flex">
-                    Precio:
-                    <div class="ml-2">$</div>
-                    <div class="ml-2 text-primary">$$</div>
-                    <div class="ml-2">$$$</div>
-                    <div class="ml-2">$$$$</div>
-                </div>
+          <div class="flex pb-2">
+            <div>Calificación</div>
+            <div class="ml-2 text-primary">&starf;</div>
+            <div class="ml-px text-primary">&starf;</div>
+            <div class="ml-px text-primary">&starf;</div>
+            <div class="ml-px text-primary">&starf;</div>
+            <div class="ml-px">&star;</div>
+          </div>
 
-                <div class="flex">
-                    <div>
-                        Calificación
-                    </div>
-
-                    <div class="ml-2  text-primary">&starf;</div>
-                    <div class="ml-px  text-primary">&starf;</div>
-                    <div class="ml-px  text-primary">&starf;</div>
-                    <div class="ml-px  text-primary">&starf;</div>
-                    <div class="ml-px">&star;</div>
-                </div>
-
-                <div>
-                    <button class="btn btn-primary">Filtrar</button>
-                </div>
-            </div>
+          <div class="flex justify-end pb-2">
+            <button class="btn btn-primary">Filtrar</button>
+          </div>
         </div>
+      </div>
     </nav>
 
     <main class="mb-8">
-        <div class="h-56  md:h-120 md:bg-center bg-cover bg-no-repeat bg-center"
-            style="background-image: url(https://images.pexels.com/photos/3356042/pexels-photo-3356042.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
-        </div>
-        <div class="container mx-auto md:flex">
-            <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
-                <div>
-                    <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
-                        src="https://images.pexels.com/photos/792027/pexels-photo-792027.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                        alt="">
-                </div>
-                <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
-                    <h2 class="text-xl tracking-tight font-semibold text-gray-900">Pollo agridulce</h2>
-                    <p class="text-gray-700 leading-snug md:text-lg">Pollo con aderezo agridulce y ensalada.</p>
-                    <div class="mt-2 text-sm font-semibold text-gray-700">MXN $135</div>
-                    <div class="mt-2 text-xs text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
-                </div>
-            </div>
+      <div class="h-56 md:h-120 md:bg-center bg-cover bg-no-repeat bg-center"
+        style="background-image: url(https://images.pexels.com/photos/3356042/pexels-photo-3356042.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
+      </div>
 
-            <div class="mx-2 md:mx-0 md:ml-2 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
-                <div>
-                    <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
-                        src="https://images.pexels.com/photos/1860205/pexels-photo-1860205.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                        alt="">
-                </div>
-                <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
-                    <h2 class="text-xl tracking-tight font-semibold text-gray-900">Pollo en salsa de ajonjolí</h2>
-                    <p class="text-gray-700 leading-snug md:text-lg">Pollo bañado en salsa de ajonjolí con ensalada.</p>
-                    <div class="mt-2 text-sm font-semibold text-gray-700">MXN $150</div>
-                    <div class="mt-2 text-xs text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
-                </div>
-            </div>
-        </div>
-        <div class="container mx-auto md:flex">
-            <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
-                <div>
-                    <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
-                        src="https://images.pexels.com/photos/1815898/pexels-photo-1815898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                        alt="">
-                </div>
-                <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
-                    <h2 class="text-xl tracking-tight font-semibold text-gray-900">Pasta con carne</h2>
-                    <p class="text-gray-700 leading-snug md:text-lg">Pasta con carne de res, vegetales y chile.</p>
-                    <div class="mt-2 text-sm font-semibold text-gray-700">MXN $75</div>
-                    <div class="mt-2 text-xs text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
-                </div>
-            </div>
-
-            <div class="mx-2 md:mx-0 md:ml-2 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
-                <div>
-                    <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
-                        src="https://images.pexels.com/photos/10518222/pexels-photo-10518222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                        alt="">
-                </div>
-                <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
-                    <h2 class="text-xl tracking-tight font-semibold text-gray-900">Waffle</h2>
-                    <p class="text-gray-700 leading-snug md:text-lg">Waffle con miel y frutos rojos.</p>
-                    <div class="mt-2 text-sm font-semibold text-gray-700">MXN $85</div>
-                    <div class="mt-2 text-xs text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
-                </div>
-            </div>
-        </div>
-        <div class="container mx-auto md:flex">
-            <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
-                <div>
-                    <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
-                        src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                        alt="">
-                </div>
-                <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
-                    <h2 class="text-xl tracking-tight font-semibold text-gray-900">Hot Cakes</h2>
-                    <p class="text-gray-700 leading-snug md:text-lg">hot cakes de avena con cajeta y fruta al gusto.</p>
-                    <div class="mt-2 text-sm font-semibold text-gray-700">MXN $45</div>
-                    <div class="mt-2 text-xs text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
-                </div>
-            </div>
-
-            <div class="mx-2 md:mx-0 md:ml-2 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
-                <div>
-                    <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
-                        src="https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                        alt="">
-                </div>
-                <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
-                    <h2 class="text-xl tracking-tight font-semibold text-gray-900">Pescado con ensalada</h2>
-                    <p class="text-gray-700 leading-snug md:text-lg">Pescado al mojo de ajo con ensalada y aderezo.</p>
-                    <div class="mt-2 text-sm font-semibold text-gray-700">MXN $85</div>
-                    <div class="mt-2 text-xs text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
-                </div>
-            </div>
-        </div>
-        <div class="container mx-auto md:flex">
-            <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
-                <div>
-                    <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
-                        src="https://images.pexels.com/photos/1143754/pexels-photo-1143754.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                        alt="">
-                </div>
-                <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
-                    <h2 class="text-xl tracking-tight font-semibold text-gray-900">Sincronizadas vegetariana</h2>
-                    <p class="text-gray-700 leading-snug md:text-lg">Sincronizadas de verduras frescas.</p>
-                    <div class="mt-2 text-sm font-semibold text-gray-700">MXN $55</div>
-                    <div class="mt-2 text-xs text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
-                </div>
-            </div>
-
-            <div class="mx-2 md:mx-0 md:ml-2 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
-                <div>
-                    <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
-                        src="https://images.pexels.com/photos/566566/pexels-photo-566566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                        alt="">
-                </div>
-                <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
-                    <h2 class="text-xl tracking-tight font-semibold text-gray-900">Pan tostado</h2>
-                    <p class="text-gray-700 leading-snug md:text-lg">Pan tostado con aguacate y huevo cocido.</p>
-                    <div class="mt-2 text-sm font-semibold text-gray-700">MXN $35</div>
-                    <div class="mt-2 text-xs text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
-                </div>
-            </div>
-        </div>
-        <div class="container mx-auto md:flex">
-            <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
-                <div>
-                    <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
-                        src="https://images.pexels.com/photos/1603463/pexels-photo-1603463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                        alt="">
-                </div>
-                <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
-                    <h2 class="text-xl tracking-tight font-semibold text-gray-900">Tortilla de huevo</h2>
-                    <p class="text-gray-700 leading-snug md:text-lg">Tortilla de huevo con vegetales.</p>
-                    <div class="mt-2 text-sm font-semibold text-gray-700">MXN $35</div>
-                    <div class="mt-2 text-xs text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
-                </div>
-            </div>
-
-            <div class="mx-2 md:mx-0 md:ml-2 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
-                <div>
-                    <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
-                        src="https://images.pexels.com/photos/2059152/pexels-photo-2059152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                        alt="">
-                </div>
-                <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
-                    <h2 class="text-xl tracking-tight font-semibold text-gray-900">Puntas de res</h2>
-                    <p class="text-gray-700 leading-snug md:text-lg">Puntas de res con verduras y arroz.</p>
-                    <div class="mt-2 text-sm font-semibold text-gray-700">MXN $125</div>
-                    <div class="mt-2 text-xs text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
-                </div>
-            </div>
-        </div>
-        <div class="container mx-auto md:flex">
-            <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
-                <div>
-                    <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
-                        src="https://images.pexels.com/photos/263041/pexels-photo-263041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                        alt="">
-                </div>
-                <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
-                    <h2 class="text-xl tracking-tight font-semibold text-gray-900">Pizza vegetariana</h2>
-                    <p class="text-gray-700 leading-snug md:text-lg">Pizza con queso y verduras al gusto.</p>
-                    <div class="mt-2 text-sm font-semibold text-gray-700">MXN $100</div>
-                    <div class="mt-2 text-xs text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
-                </div>
-            </div>
-
-            <div class="mx-2 md:mx-0 md:ml-2 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
-                <div>
-                    <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
-                        src="https://images.pexels.com/photos/264727/pexels-photo-264727.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                        alt="">
-                </div>
-                <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
-                    <h2 class="text-xl tracking-tight font-semibold text-gray-900">Crepa dulce</h2>
-                    <p class="text-gray-700 leading-snug md:text-lg">Crepa con fruta y crema al gusto.</p>
-                    <div class="mt-2 text-sm font-semibold text-gray-700">MXN $65</div>
-                    <div class="mt-2 text-xs text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
-                </div>
-            </div>
+      <div class="container mx-auto md:flex">
+        <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg md:justify-center">
+          <div>
+            <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
+              src="https://images.pexels.com/photos/792027/pexels-photo-792027.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              alt=""
+            />
+          </div>
+          <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
+            <h2 class="text-xl tracking-tight font-semibold text-gray-900">Pollo agridulce</h2>
+            <p class="text-gray-700 leading-snug md:text-lg">Pollo con aderezo agridulce y ensalada.</p>
+            <div class="mt-2 text-sm font-semibold text-gray-700">MXN $135</div>
+            <div class="mt-2 text-sm text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
+          </div>
         </div>
 
-        <div class="container mx-auto mt-4 px-2">
-            <div>
-                <div>Nombre</div>
-                <input class="form-control placeholder-secondary" type="text" placeholder="Nombre">
-            </div>
+        <div class="mx-2 md:mx-0 md:ml-2 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg md:justify-center">
+          <div>
+            <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
+              src="https://images.pexels.com/photos/1860205/pexels-photo-1860205.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              alt=""
+            />
+          </div>
+          <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2" >
+            <h2 class="text-xl tracking-tight font-semibold text-gray-900">Pollo en salsa de ajonjolí</h2>
+            <p class="text-gray-700 leading-snug md:text-lg">Pollo bañado en salsa de ajonjolí con ensalada.</p>
+            <div class="mt-2 text-sm font-semibold text-gray-700">MXN $150</div>
+            <div class="mt-2 text-sm text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
+          </div>
+        </div>
+      </div>
 
-            <div>
-                <div>Email</div>
-                <input class="form-control placeholder-secondary" type="email" placeholder="Email">
-            </div>
-
-            <div>
-                <div>Comentarios</div>
-                <textarea class="form-control placeholder-secondary" name="" id="" cols="30" rows="10"></textarea>
-            </div>
-
-            <div>
-                <button class="btn btn-primary mx-auto">Enviar</button>
-            </div>
+      <div class="container mx-auto md:flex">
+        <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg md:justify-center">
+          <div>
+            <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
+              src="https://images.pexels.com/photos/1815898/pexels-photo-1815898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              alt=""
+            />
+          </div>
+          <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
+            <h2 class="text-xl tracking-tight font-semibold text-gray-900">Pasta con carne</h2>
+            <p class="text-gray-700 leading-snug md:text-lg">Pasta con carne de res, vegetales y chile.</p>
+            <div class="mt-2 text-sm font-semibold text-gray-700">MXN $75</div>
+            <div class="mt-2 text-sm text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
+          </div>
         </div>
 
+        <div class="mx-2 md:mx-0 md:ml-2 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg md:justify-center">
+          <div>
+            <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
+              src="https://images.pexels.com/photos/10518222/pexels-photo-10518222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              alt=""
+            />
+          </div>
+          <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
+            <h2 class="text-xl tracking-tight font-semibold text-gray-900">Waffle</h2>
+            <p class="text-gray-700 leading-snug md:text-lg">Waffle con miel y frutos rojos.</p>
+            <div class="mt-2 text-sm font-semibold text-gray-700">MXN $85</div>
+            <div class="mt-2 text-sm text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mx-auto md:flex">
+        <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg md:justify-center">
+          <div>
+            <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
+              src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              alt=""
+            />
+          </div>
+          <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
+            <h2 class="text-xl tracking-tight font-semibold text-gray-900">Hot Cakes</h2>
+            <p class="text-gray-700 leading-snug md:text-lg">hot cakes de avena con cajeta y fruta al gusto.</p>
+            <div class="mt-2 text-sm font-semibold text-gray-700">MXN $45</div>
+            <div class="mt-2 text-sm text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
+          </div>
+        </div>
+
+        <div class="mx-2 md:mx-0 md:ml-2 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg md:justify-center">
+          <div>
+            <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
+              src="https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              alt=""
+            />
+          </div>
+          <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
+            <h2 class="text-xl tracking-tight font-semibold text-gray-900">Pescado con ensalada</h2>
+            <p class="text-gray-700 leading-snug md:text-lg">Pescado al mojo de ajo con ensalada y aderezo.</p>
+            <div class="mt-2 text-sm font-semibold text-gray-700">MXN $85</div>
+            <div class="mt-2 text-sm text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mx-auto md:flex">
+        <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg md:justify-center">
+          <div>
+            <img class=" w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
+              src="https://images.pexels.com/photos/1143754/pexels-photo-1143754.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              alt=""
+            />
+          </div>
+          <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
+            <h2 class="text-xl tracking-tight font-semibold text-gray-900">Sincronizadas vegetariana</h2>
+            <p class="text-gray-700 leading-snug md:text-lg">Sincronizadas de verduras frescas.</p>
+            <div class="mt-2 text-sm font-semibold text-gray-700">MXN $55</div>
+            <div class="mt-2 text-sm text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
+          </div>
+        </div>
+
+        <div class="mx-2 md:mx-0 md:ml-2 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg md:justify-center" >
+          <div>
+            <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
+              src="https://images.pexels.com/photos/566566/pexels-photo-566566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              alt=""
+            />
+          </div>
+          <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2" >
+            <h2 class="text-xl tracking-tight font-semibold text-gray-900">Pan tostado</h2>
+            <p class="text-gray-700 leading-snug md:text-lg">Pan tostado con aguacate y huevo cocido.</p>
+            <div class="mt-2 text-sm font-semibold text-gray-700">MXN $35</div>
+            <div class="mt-2 text-sm text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mx-auto md:flex">
+        <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg md:justify-center">
+          <div>
+            <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
+              src="https://images.pexels.com/photos/1603463/pexels-photo-1603463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              alt=""
+            />
+          </div>
+          <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
+            <h2 class="text-xl tracking-tight font-semibold text-gray-900">Tortilla de huevo</h2>
+            <p class="text-gray-700 leading-snug md:text-lg">Tortilla de huevo con vegetales.</p>
+            <div class="mt-2 text-sm font-semibold text-gray-700">MXN $35</div>
+            <div class="mt-2 text-sm text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
+          </div>
+        </div>
+
+        <div class="mx-2 md:mx-0 md:ml-2 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg md:justify-center">
+          <div>
+            <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
+              src="https://images.pexels.com/photos/2059152/pexels-photo-2059152.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              alt=""
+            />
+          </div>
+          <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
+            <h2 class="text-xl tracking-tight font-semibold text-gray-900">Puntas de res</h2>
+            <p class="text-gray-700 leading-snug md:text-lg">Puntas de res con verduras y arroz.</p>
+            <div class="mt-2 text-sm font-semibold text-gray-700">MXN $125</div>
+            <div class="mt-2 text-sm text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mx-auto md:flex">
+        <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg md:justify-center">
+          <div>
+            <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
+              src="https://images.pexels.com/photos/263041/pexels-photo-263041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              alt=""
+            />
+          </div>
+          <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
+            <h2 class="text-xl tracking-tight font-semibold text-gray-900">Pizza vegetariana</h2>
+            <p class="text-gray-700 leading-snug md:text-lg">Pizza con queso y verduras al gusto.</p>
+            <div class="mt-2 text-sm font-semibold text-gray-700">MXN $100</div>
+            <div class="mt-2 text-sm text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
+          </div>
+        </div>
+
+        <div class="mx-2 md:mx-0 md:ml-2 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg md:justify-center">
+          <div>
+            <img class="w-full md:w-48 md:h-full object-cover rounded-lg md:rounded-r-none"
+              src="https://images.pexels.com/photos/264727/pexels-photo-264727.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+              alt=""
+            />
+          </div>
+          <div class="relative mx-2 md:mx-0 p-2 shadow-lg bg-white md:bg-transparent rounded-lg -mt-2 md:-mt-0 md:w-1/2">
+            <h2 class="text-xl tracking-tight font-semibold text-gray-900">Crepa dulce</h2>
+            <p class="text-gray-700 leading-snug md:text-lg">Crepa con fruta y crema al gusto.</p>
+            <div class="mt-2 text-sm font-semibold text-gray-700">MXN $65</div>
+            <div class="mt-2 text-sm text-yellow-600">&starf;&starf;&starf;&starf;&star; / 36 reseñas</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mx-auto mt-6 md:px-12 px-5 md:justify-center">
+        <div class="md:my-4 my-3">
+          <div class="md:mb-2">Nombre</div>
+          <input class="form-control placeholder-secondary" type="text" placeholder="Nombre" />
+        </div>
+
+        <div class="md:my-4 my-3">
+          <div class="md:mb-2">Email</div>
+          <input class="form-control placeholder-secondary" type="email" placeholder="Email" />
+        </div>
+
+        <div class="md:my-4 my-3">
+          <div class="md:mb-2">Comentarios</div>
+          <textarea class="form-control placeholder-secondary" name="" id="" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="md:my-4 my-3">
+          <button class="btn btn-primary mx-auto">Enviar</button>
+        </div>
+      </div>
     </main>
 
-    <footer class="w-full text-white bg-secondary">
-
-        <div class="md:flex md:flex-row-reverse justify-around">
-            <div class="mt-4 ml-8">
-                <div class="hover:text-blue-600"> <i class="fa fa-facebook"></i> Facebook</div>
-                <div class="hover:text-blue-400"> <i class="fa fa-twitter"></i> Twitter</div>
-                <div class="hover:text-pink-600"><i class="fa fa-instagram"></i> Instagram</div>
-            </div>
-
-            <ul class="mt-4 mb-4 ml-8 md:list-disc">
-                <li>Soporte</li>
-                <li>Acerca de nosotros</li>
-                <li>Registro</li>
-                <li>Aviso de Privacidad</li>
-            </ul>
+    <footer class="w-full text-white bg-secondary py-2">
+      <div class="md:flex md:flex-row-reverse justify-around flex">
+        <div class="mt-4">
+          <div class="hover:text-blue-600">
+            <i class="fa fa-facebook"></i> Facebook
+          </div>
+          <div class="hover:text-blue-400">
+            <i class="fa fa-twitter"></i> Twitter
+          </div>
+          <div class="hover:text-pink-600">
+            <i class="fa fa-instagram"></i> Instagram
+          </div>
         </div>
-    </footer>
-</body>
 
+        <ul class="mt-4 mb-4">
+          <li>Soporte</li>
+          <li>Acerca de nosotros</li>
+          <li>Registro</li>
+          <li>Aviso de Privacidad</li>
+        </ul>
+      </div>
+    </footer>
+  </body>
 </html>
