@@ -1,3 +1,6 @@
+# Tailwind: Healthy Food ☘
+
+![overview](public/images/home.png)
 ## Librerias
 
 * npm install tailwindcss autoprefixer postcss-cli
@@ -14,7 +17,7 @@
 
 * npm install autoprefixer@'9.8.6'
 
-* npx tailwindcss init tailwind.config.full.js --full 
+* npx tailwindcss init tailwind.config.full.js --full
 
 * npm i -D @fullhuman/postcss-purgecss
 
