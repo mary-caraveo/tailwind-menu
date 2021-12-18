@@ -3,7 +3,7 @@
 @tailwind components;
 
 .form-control {
-  @apply w-full leading-snug text-gray-800 py-1 px-4 rounded border border-gray-600 bg-gray-200;
+  @apply w-full leading-snug text-gray-800 py-1 px-4 rounded border border-gray-600;
 }
 
 .form-control:hover {
@@ -11,7 +11,7 @@
 }
 
 .form-control:focus {
-  @apply outline-none shadow-outline;
+  @apply outline-none;
 }
 
 .btn {
