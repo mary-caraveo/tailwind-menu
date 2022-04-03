@@ -1,7 +1,9 @@
 module.exports = {
   future: {
   },
-  purge: [],
+  content: [
+    './**/*.{html,js}',
+  ],
   theme: {
     extend: {
       colors: {
