@@ -1,9 +1,7 @@
 module.exports = {
   future: {
   },
-  content: [
-    './**/*.{html,js}',
-  ],
+  content: ["./*.{html,js}"],
   theme: {
     extend: {
       colors: {
